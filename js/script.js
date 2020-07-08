@@ -29,6 +29,14 @@ $(function () {
             clickable: true,
         },
     });
+	
+	var swiper = new Swiper('.swiper4', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
     
     
     
@@ -53,9 +61,12 @@ $(function () {
             $('.after').css('background-color','')
             $('.line').css('background-color','')
 			$('.logo img').attr('src','images/common/logo_white.png')
+			$('.follow img').attr('src','images/common/plus_white.svg')
 			$('.left_wrap').css('border-color','')
 		    $('.follow').css('border-color','')
 			$('.top_list li .after').css('background-color','')
+			$('.scroll_down').css('color','')
+			$('.scroll_down img').attr('src','images/common/scroll_white.png')
          } else if (top > sec2 /*&& top < sec2*/) {
             $('.top_list').css('color','#222')
             $('.left_wrap').css('color','#222')
@@ -63,20 +74,40 @@ $(function () {
             $('.after').css('background-color','#222')
             $('.line').css('background-color','#222')
 		    $('.logo img').attr('src','images/common/logo_black.png')
+		    $('.follow img').attr('src','images/common/plus_black.svg')
 		    $('.left_wrap').css('border-color','rgba(0,0,0,0.2)')
 		    $('.follow').css('border-color','rgba(0,0,0,0.2)')
 			$('.top_list li .after').css('background-color','#555')
-        }
-		/*
-       .left_wrap{cborder-right: 1px solid rgba(0,0,0,0.2);}
-	   .follow{border-color: rgba(0,0,0,0.2);}
-	   	*/
-		
-		
+			$('.scroll_down').css('color','#222')
+			$('.scroll_down img').attr('src','images/common/scroll_black.png')
+        }		
     }); /*window scroll*/
     
-    
-    
+    /*메뉴 아이콘 클릭 토탈메뉴*/
+	$('.total_menu').hide();
+	$('.menu_icon').click(function(){		
+		$('.total_menu').fadeIn();
+	})
+	$('.close').click(function(){
+		$('.total_menu').fadeOut();
+	})
+	
+    /*notice tab 색변경*/
+	$('.tab li').click(function(){
+		$('.tab li').removeClass('selected')
+		$(this).addClass('selected')
+	})
+	
+	/*notice tab 내용변경*/
+	$('.tab li').click(function(){
+		$('.notice1, .notice2, .notice3, .notice4, .notice5').hide()
+		$($(this).attr('href')).show()		
+	})
+	
+	
+	
+	
+	
     
 }); /*doc ready*/
     
