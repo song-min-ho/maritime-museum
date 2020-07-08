@@ -9,9 +9,10 @@
     <script src="js/jquery-3.5.1.min.js"></script>   
     <script src="js/swiper-bundle.min.js"></script> 
     <script src="js/script.js"></script>
+    <script src="js/mousewheel.js"></script>
 </head>
 <body>
-    <div class="wrap">
+    <div id="wrap">    
         <div class="left_wrap">
             <div class="menu_icon">
                 <div class="line"></div>
@@ -19,62 +20,366 @@
                 <div class="line"></div>
             </div><!--menu_icon-->
             <div class="follow">
-                <p>FOLLOW US <img src="images/plus.svg" alt="plus-icon"></p>                
+                <p>FOLLOW US <img src="images/common/plus_white.svg" alt="plus-icon"></p>                
             </div><!--follow-->
             <div class="btn_go">
                 Journal of Ocean &amp; Culture
             </div><!--btn_go-->
         </div><!--left_wrap-->
         <header class="top">
-            <h1 class="logo"><img src="images/logo_white.png" alt="logo"></h1>
+            <h1 class="logo"><img src="images/common/logo_white.png" alt="logo"></h1>
             <ul class="top_list">
-                <li><a href="#">관람정보</a></li>
-                <li><a href="#">전시</a></li>
-                <li><a href="#">교육·문화</a></li>
-                <li><a href="#">소장품</a></li>
-                <li><a href="#">학술연구</a></li>
-                <li><a href="#">발간자료</a></li>
-                <li><a href="#">KNMM</a></li>
+                <li><a href="#">관람정보</a><div class="after"></div></li>
+                <li><a href="#">전시</a><div class="after"></div></li>
+                <li><a href="#">교육·문화</a><div class="after"></div></li>
+                <li><a href="#">소장품</a><div class="after"></div></li>
+                <li><a href="#">학술연구</a><div class="after"></div></li>
+                <li><a href="#">발간자료</a><div class="after"></div></li>
+                <li><a href="#">KNMM</a><div class="after"></div></li>
             </ul><!--top_list-->
         </header><!--top-->
         <ul class="right_nav">
-            <li><a href="#scene1">기획전시</a></li>
-            <li><a href="#scene2">교육문화</a></li>
-            <li><a href="#scene3">주요소장품</a></li>
-            <li><a href="#scene4">알림</a></li>
-            <li><a href="#scene5">관람안내</a></li>            
-            <li><a href="#scene6">▲TOP</a></li>            
+            <li><a href="#scene2">기획전시</a><div class="after"></div></li>
+            <li><a href="#scene3">교육문화</a><div class="after"></div></li>
+            <li><a href="#scene4">주요소장품</a><div class="after"></div></li>
+            <li><a href="#scene5">알림</a><div class="after"></div></li>
+            <li><a href="#scene6">관람안내</a><div class="after"></div></li>            
+            <li><a href="#scene1">▲TOP</a><div class="after"></div></li>            
         </ul><!--right_nav-->
-        <div class="container">
-		<div class="swiper-container" id="scene1">
-			<ul class="swiper-wrapper">
-				<li class="visual1_1 swiper-slide">
-					<div class="visual_txt">
-						<h2 class="visual_title1">KNMM</h2>
-						<h1>국립해양박물관의 문은<br>언제나 바다로</h1>
-						<h3>Korea National Martime Museum</h3>
-					</div>
-				</li>
-				<li class="visual1_2 swiper-slide">
-					<div class="visual_txt">
-						<h2 class="visual_title2">소장품</h2>
-						<h1>해주항아리(海州壺)</h1>
-						<h3>Korea National Martime Museum</h3>
-					</div>
-				</li>
-				<li class="visual1_3 swiper-slide">
-					<div class="visual_txt">
-						<h2 class="visual_title3">교육·문화</h2>
-						<h1>해양교육문화박람회</h1>
-						<h3>우리가 꿈꾸는 바다를 온라인으로 즐겨요.</h3>
-					</div>
-				</li>
-			</ul>
-			<!-- Add Pagination -->
-    		<div class="swiper-pagination"></div>
-		</div>
-		<div id="scene2"></div>
-	</div><!--container-->
-    </div><!--wrap-->
+    <div class="container">
+        <div class="total_menu">        	      	
+        	<ul>
+        		<h1 class="menu_logo"><a href="#"><img src="images/common/logo_white.png" alt="logo_white"></a></h1>
+        		<li><a href="#">관람정보</a>
+        			<ul>
+        				<li><a href="#">관람안내</a></li>
+        				<li><a href="#">박물관 일정</a></li>
+        				<li><a href="#">오시는길</a>
+        					<ul>
+        						<li><a href="#">오시는길</a></li>
+        						<li><a href="#">주차안내</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">관람예약</a>
+        					<ul>
+        						<li><a href="#">전시해설</a></li>
+        						<li><a href="#">단체관람</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">해양도서관</a></li>
+        				<li><a href="#">4D영상관</a></li>
+        				<li><a href="#">시설안내</a>
+        					<ul>
+        						<li><a href="#">전체안내</a></li>
+        						<li><a href="#">층별안내</a></li>
+        						<li><a href="#">편의시설안내</a></li>
+        						<li><a href="#">시설대관</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">자주하는 질문</a></li>
+        			</ul>
+        		</li>
+        		<li><a href="#">전시</a>
+        			<ul>
+        				<li><a href="#">기획전시</a>
+        					<ul>
+        						<li><a href="현재·예정전시"></a></li>
+        						<li><a href="지난전시"></a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">상설전시</a>
+        					<ul>
+        						<li><a href="#">층별전시안내</a></li>
+        						<li><a href="#">3층 항해선박</a></li>
+        						<li><a href="#">3층 해양역사인물</a></li>
+        						<li><a href="#">3층 해양생물</a></li>
+        						<li><a href="#">4층 해양산업</a></li>
+        						<li><a href="#">4층 해양과학</a></li>
+        						<li><a href="#">4층 해양영토</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">야외전시</a></li>
+        				<li><a href="#">전시자료</a></li>
+        			</ul>
+        		</li>
+        		<li><a href="#">교육·문화</a>
+        			<ul>
+        				<li><a href="#">교육</a>
+        					<ul>
+        						<li><a href="#">현재교육</a></li>
+        						<li><a href="#">지난교육</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">어린이박물관</a></li>
+        				<li><a href="#">교육자료</a>
+        					<ul>
+        						<li><a href="#">교육자료</a></li>
+        						<li><a href="#">교육사진관</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">해양교육문화박람회</a>
+        					<ul>
+        						<li><a href="#">어린이 그리고 우리의 바다</a></li>
+        						<li><a href="#">온라인 바다 배움관</a></li>
+        						<li><a href="#">내가 만드는<br>해양교육문화박람회</a></li>        						
+        					</ul>
+        				</li>
+        				<li><a href="#">이벤트</a>
+        					<ul>
+        						<li><a href="#">현재이벤트</a></li>
+        						<li><a href="#">지난이벤트</a></li>
+        					</ul>
+        				</li>
+        			</ul>
+        		</li>
+        		<li><a href="#">소장품</a>
+        			<ul>
+        				<li><a href="#">소장품 검색</a>
+        					<ul>
+        						<li><a href="#">주요 소장자료</a></li>
+        						<li><a href="#">소장자료 검색</a></li>
+        						<li><a href="#">지정문화재</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">소장품 이야기</a>
+        					<ul>
+        						<li><a href="#">소장자료 3D보기</a></li>
+        						<li><a href="#">소장자료 이야기</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">기증</a>
+        					<ul>
+        						<li><a href="#">기증안내 및 예우</a></li>
+        						<li><a href="#">기증현황</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">소장자료 관리</a>
+        					<ul>
+        						<li><a href="#">수장고 현황</a></li>
+        						<li><a href="#">보존관학동 현황</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">열람·복제</a>
+        					<ul>
+        						<li><a href="#">열람·복제 안내 및 신청</a></li>
+        					</ul>
+        				</li>
+        			</ul>
+        		</li>
+        		<li><a href="#">학술연구</a>
+        			<ul>
+        				<li><a href="#">학술행사</a></li>
+        				<li><a href="#">발간총서</a></li>
+        			</ul>
+        		</li>
+        		<li><a href="#">KNMM</a>
+        			<ul>
+        				<li><a href="#">인사말</a>
+        					<ul>
+        						<li><a href="#">인사말·기고문</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">조직 및 업무</a></li>
+        				<li><a href="#">KNMM소개</a>
+        					<ul>
+        						<li><a href="#">연혁 및 현황·시설소개</a></li>
+        						<li><a href="#">박물관MI·홍보영상</a></li>
+        						<li><a href="#">홍보자료</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">알림</a>
+        					<ul>
+        						<li><a href="#">공지사항·채용공고</a></li>
+        						<li><a href="#">언론/보도자료</a></li>
+        						<li><a href="#">영상/카드뉴스</a></li>
+        						<li><a href="#">포토갤러리·사회공헌</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">1:1문의</a></li>
+        				<li><a href="#">관람후기</a></li>
+        				<li><a href="#">부조리신고센터</a></li>
+        				<li><a href="#">고객현장</a>
+        					<ul>
+        						<li><a href="#">고객현장·인권경영헌장</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">자원봉사안내</a></li>
+        			</ul>
+        		</li>
+        		<li><a href="#">정보공개</a>
+        			<ul>
+        				<li><a href="#">정보공개제도안내</a>
+        					<ul>
+        						<li><a href="#">정보공개개요</a></li>
+        						<li><a href="#">정보공개방법</a></li>
+        						<li><a href="#">비공개정보 세부기준</a></li>
+        						<li><a href="#">불복구제 절차</a></li>
+        						<li><a href="#">정보공개관련 법규</a></li>
+        						<li><a href="#">정보공개관련 서식</a></li>
+        						<li><a href="#">정보공개수수료</a></li>        						
+        					</ul>
+        				</li>
+        				<li><a href="#">사전정보공개</a>
+        					<ul>
+        						<li><a href="#">사전정보공표목록</a></li>
+        						<li><a href="#">제목별공표목록</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="#">정보목록</a></li>
+        				<li><a href="#">정보공개청구신청</a></li>
+        				<li><a href="#">공공데이터개방</a></li>
+        				<li><a href="#">사업실명제</a>
+        					<ul>
+        						<li><a href="#">사업실명제 개요</a></li>
+        						<li><a href="#">선정기준 및 현황</a></li>
+        						<li><a href="#">대상사업리스트</a></li>
+        					</ul>
+        				</li>
+        			</ul>
+        		</li>
+        		<div class="menu_bottom">
+        			<span class="tit">이용약관</span><div class="line"></div>
+        			<ul>        				
+        				<li><a href="#">이용약관</a></li>
+        				<li><a href="#">개인정보처리방침</a></li>
+        				<li><a href="#">영상정보처리기기운영·관리방침</a></li>
+        				<li><a href="#">이메일무단수집거부</a></li>
+        				<li><a href="#">저작권정책</a></li>
+        			</ul>        			    			
+        		</div><!--menu_bottom-->
+        	</ul>        	
+        </div><!--total_menu-->
+        <div class="swiper-container swiper1" id="scene1">
+            <ul class="swiper-wrapper">                
+                <li class="scene1_1 swiper-slide">
+                    <div class="info">
+                        <span class="stit">KNMM</span><br>
+                        <span class="tit">국립해양박물관의 문은<br>언제나 바다로</span>
+                        <span class="txt">Korea National Martime Museum</span>
+                    </div>
+                    <span class="txt_num">About KNMM</span>
+                </li>
+                <li class="scene1_2 swiper-slide">
+                    <div class="info">
+                        <span class="stit">소장품</span><br>
+                        <span class="tit">해주항아리(海州壺)</span>
+                        <span class="txt">Blue and White Pocelain Jar Originated from Haeju</span>
+                    </div>
+                    <span class="txt_num">View Collection</span>
+                </li>
+                <li class="scene1_3 swiper-slide">
+                    <div class="info">
+                        <span class="stit">교육·문화</span><br> <!--d:ib 으로하고 br주면 밑줄 길이맞춰짐-->
+                        <span class="tit">해양교육문화박람회</span>
+                        <span class="txt">우리가 꿈꾸는 바다를 온라인으로 즐겨요.</span>
+                    </div>
+                    <span class="txt_num">해양교육문화박람회</span>
+                </li>
+            </ul>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div id="scene2" class="swiper-container swiper2">
+            <ul class="swiper-wrapper">
+                <li class="scene2_1 swiper-slide">
+                    <div class="center_wrap">
+                        <div class="info">
+                            <span class="stit">3층 상설전시</span>    
+                            <span class="tit">해양생물</span>
+                            <span class="txt">생명이 역동하는 광활한 바다</span>
+                            <a href="#" class="more">자세히보기</a>
+                        </div>
+                        <img src="images/exhibition1.jpg" alt="exhibit">                
+                    </div><!--center_wrap-->
+                </li>
+                <li class="scene2_2 swiper-slide">
+                    <div class="center_wrap">
+                        <div class="info">
+                            <span class="stit">3층 상설전시</span>    
+                            <span class="tit">해양문화</span>
+                            <span class="txt">바다에서의 삶</span>
+                            <a href="#" class="more">자세히보기</a>
+                        </div>
+                        <img src="images/exhibition2.jpg" alt="exhibit">                
+                    </div><!--center_wrap-->
+                </li>
+                <li class="scene2_3 swiper-slide">
+                    <div class="center_wrap">
+                        <div class="info">
+                            <span class="stit">3층 상설전시</span>    
+                            <span class="tit">항해선박</span>
+                            <span class="txt">선조들의 기술과 해양력</span>
+                            <a href="#" class="more">자세히보기</a>
+                        </div>
+                        <img src="images/exhibition3.jpg" alt="exhibit">                
+                    </div><!--center_wrap-->
+                </li>                
+            </ul><!--swiper-wrapper-->
+            <div class="swiper-pagination"></div>
+        </div><!--scene2-->
+        
+        
+        <div id="scene3" class="swiper-container swiper3">
+            <ul class="swiper-wrapper">
+                <li class="scene3_1 swiper-slide">
+                    <div class="center_wrap">
+                        <img src="images/culture1.jpg" alt="exhibit">  
+                        <div class="info">
+                            <span class="stit">해양교육문화박람회<br></span>    
+                            <span class="tit">내가 만드는<br>해양교육문화박람회</span>
+                            <span class="txt">2020.06.26(금)~08.03(월) 18:00까지<br>누구나 응모 가능</span>
+                            <a href="#" class="more">자세히보기</a>
+                        </div>                                      
+                    </div><!--center_wrap-->
+                </li>
+                <li class="scene3_2 swiper-slide">
+                    <div class="center_wrap">
+                        <img src="images/culture2.jpg" alt="exhibit">  
+                        <div class="info">
+                            <span class="stit">해양교육문화박람회<br></span>    
+                            <span class="tit">어린이 그리고<br>우리의 바다 그림 전시</span>
+                            <span class="txt">생명의 바다 그림대회와 등대 사랑 그림그리기 대회<br>수상작을 만나보세요!</span>
+                            <a href="#" class="more">자세히보기</a>
+                        </div>                                      
+                    </div><!--center_wrap-->
+                </li>
+                <li class="scene3_3 swiper-slide">
+                    <div class="center_wrap">
+                        <img src="images/culture3.jpg" alt="exhibit">  
+                        <div class="info">
+                            <span class="stit">해양교육문화박람회<br></span>    
+                            <span class="tit">온라인 바다 배움관</span>
+                            <span class="txt">바다와 관련된 소중한 문화 유산을 종이접기와<br>만들기를 통해 이해하고 알아보아요!</span>
+                            <a href="#" class="more">자세히보기</a>
+                        </div>                                      
+                    </div><!--center_wrap-->
+                </li>  
+                <li class="scene3_4 swiper-slide">
+                    <div class="center_wrap">
+                        <img src="images/culture4.jpg" alt="exhibit">  
+                        <div class="info">
+                            <span class="stit">교육<br></span>    
+                            <span class="tit">온라인 교육자료실</span>
+                            <span class="txt">바다의 역사와 문화에 관한 다양한 교육자료를<br>제공합니다</span>
+                            <a href="#" class="more">자세히보기</a>
+                        </div>                                      
+                    </div><!--center_wrap-->
+                </li>
+                <li class="scene3_5 swiper-slide">
+                    <div class="center_wrap">
+                        <img src="images/culture5.jpg" alt="exhibit">  
+                        <div class="info">
+                            <span class="stit">교육<br></span>    
+                            <span class="tit">어린이박물관</span>
+                            <span class="txt">바다와 환경에 대한 어린이 체험형 전시</span>
+                            <a href="#" class="more">자세히보기</a>
+                        </div>                                      
+                    </div><!--center_wrap-->
+                </li>              
+            </ul><!--swiper-wrapper-->
+            <div class="swiper-pagination"></div>
+        </div><!--scene3-->
+    </div><!--container-->
+</div><!--wrap-->
 </body>
 </html>
