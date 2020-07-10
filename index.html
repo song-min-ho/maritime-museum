@@ -2,12 +2,17 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <title>국립해양박물관</title>
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/layout.css">
     <script src="js/jquery-3.5.1.min.js"></script>   
-    <script src="js/swiper-bundle.min.js"></script> 
+    <script src="js/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/mousewheel.js"></script>
 </head>
@@ -27,7 +32,7 @@
             </div><!--btn_go-->
         </div><!--left_wrap-->
         <header class="top">
-            <h1 class="logo"><img src="images/common/logo_white.png" alt="logo"></h1>
+            <div class="logo_wrap"><div class="logo"><img src="images/common/logo.png" alt="logo"></div></div>
             <ul class="top_list">
                 <li><a href="#">관람정보</a><div class="after"></div></li>
                 <li><a href="#">전시</a><div class="after"></div></li>
@@ -43,7 +48,7 @@
             <li><a href="#scene3">교육문화</a><div class="after"></div></li>
             <li><a href="#scene4">주요소장품</a><div class="after"></div></li>
             <li><a href="#scene5">알림</a><div class="after"></div></li>
-            <li><a href="#scene6">관람안내</a><div class="after"></div></li>            
+            <li><a href="#scene6">관람안내</a><div class="after"></div></li>                                  
             <li><a href="#scene1">▲TOP</a><div class="after"></div></li>            
         </ul><!--right_nav-->
         <div class="total_menu">        	      	
@@ -291,7 +296,7 @@
                         <div class="info">
                             <span class="stit">3층 상설전시</span>    
                             <span class="tit">해양생물</span>
-                            <span class="txt">생명이 역동하는 광활한 바다</span>
+                            <span class="txt">생명이 역동하는 바다</span>
                             <a href="#" class="more">자세히보기</a>
                         </div>
                         <img src="images/exhibition1.jpg" alt="exhibit">                
@@ -385,36 +390,38 @@
         <div id="scene4">
         	<div class="center_wrap">
         		<h2>주요 소장품</h2>
-        		<div class="left">
-        			<div class="left1">
-        				<div class="img_wrap"><img src="images/item1.jpg" alt="item"></div>	
-        				<span class="tit">이충무공전서</span>
-        				<span class="txt">한국/1795년/종이</span>
-        			</div><!--left1-->
-        			<div class="left2">
-        				<div class="img_wrap"><img src="images/item2.jpg" alt="item"></div>
-        				<span class="tit">구스의 해도첩</span>
-        				<span class="txt">네덜란드/1666년/종이,가죽</span>
-        			</div><!--left2-->
-        		</div><!--left-->
-        		<div class="center">
-        			<div class="img_wrap"><img src="images/item3.jpg" alt="item"></div>
-        			<span class="tit">지구의와 천구의</span>
-        			<span class="txt">영국/1846년/나무,종이</span>
-        		</div><!--center-->
-        		<div class="right">
-        			<div class="right1">
-						<div class="img_wrap"><img src="images/item4.jpg" alt="item"></div>
-						<span class="tit">녹터널</span>
-						<span class="txt">프랑스/1588년/철제,금속</span>
-        			</div>
-        			<div class="right2">
-        				<div class="img_wrap"><img src="images/item5.jpg" alt="item"></div>
-        				<span class="tit">충민공계초</span>
-        				<span class="txt">한국/1662/종이</span>
-        			</div><!--right2-->
-        		</div><!--right-->
-        		<a href="#" class="more">자세히보기</a>
+        		<div class="mobile_wrap">
+					<div class="left">
+						<div class="left1">
+							<div class="img_wrap"><img src="images/item1.jpg" alt="item"></div>	
+							<span class="tit">이충무공전서</span>
+							<span class="txt">한국/1795년/종이</span>
+						</div><!--left1-->
+						<div class="left2">
+							<div class="img_wrap"><img src="images/item2.jpg" alt="item"></div>
+							<span class="tit">구스의 해도첩</span>
+							<span class="txt">네덜란드/1666년/종이,가죽</span>
+						</div><!--left2-->
+					</div><!--left-->
+					<div class="center">
+						<div class="img_wrap"><img src="images/item3.jpg" alt="item"></div>
+						<span class="tit">지구의와 천구의</span>
+						<span class="txt">영국/1846년/나무,종이</span>
+					</div><!--center-->
+					<div class="right">
+						<div class="right1">
+							<div class="img_wrap"><img src="images/item4.jpg" alt="item"></div>
+							<span class="tit">녹터널</span>
+							<span class="txt">프랑스/1588년/철제,금속</span>
+						</div>
+						<div class="right2">
+							<div class="img_wrap"><img src="images/item5.jpg" alt="item"></div>
+							<span class="tit">충민공계초</span>
+							<span class="txt">한국/1662/종이</span>
+						</div><!--right2-->
+					</div><!--right-->
+					<a href="#" class="more">자세히보기</a>
+        		</div><!--mobile_wrap-->
         	</div><!--center_wrap-->
         </div><!--scene4-->
         <div id="scene5">        	
@@ -500,8 +507,184 @@
 						</div><!--gallery2-->        			
         			</div><!--gallery-->
         		</div><!--right-->
-        	</div>        	
+        	</div><!--center_wrap-->     	
         </div><!--scene5-->
+        <div id="scene6">
+        	<div class="center_wrap">
+        		<div class="not_button">
+					<h2>관람안내</h2>
+					<div class="left">
+						<div class="time">        				        				        				
+							<span class="tit">관람시간</span>
+							<div class="time_left">화요일~일요일</div>       				
+							<div class="time_right">09:00-17:00</div>
+							<ul>
+								<li>관람은 예약하신 시간(2시간)에만 가능하며, 입장 마감 시간은 해당 타임의 종료시간 30분 전입니다.</li>
+								<li>입장 시작 시점 이후 20분부터는 입장이 지연될 수 있으니 가급적 입장시간을 지켜주세요.</li>
+								<li>입장시 마스크를 꼭 착용해 주시기 바랍니다. 마스크 미착용시 입장이 불가합니다.</li>
+							</ul>       				
+						</div><!--time-->
+						<div class="price">
+							<span class="tit">관람료</span> 
+							<span class="txt">무료(4D영상관, 유료특별전시 제외)</span>       				
+						</div><!--price-->
+					</div><!--left-->
+					<div class="right">
+						<div class="closed">
+							<span class="tit">휴관</span>
+							<div class="closed_left">휴관일</div>       				
+							<div class="closed_right">매주 월요일</div>
+							<ul>
+								<li>
+									단, 월요일이 공휴일일 때에는 공휴일 다음의 첫 번째 평일에 휴관합니다. <br>
+									(「관공서의 공휴일에 관한 규정」 제2조)
+								</li>        					
+							</ul>  
+						</div><!--closed-->
+						<div class="question">   
+							<span class="tit">관람문의</span>
+							<div class="question_left">
+								문의전화 <br>
+								이메일
+							</div>       				
+							<div class="question_right">
+								051.309.1900 <br>
+								webmaster@knmm.or.kr
+							</div>						        			
+						</div><!--question-->
+					</div><!--right-->        		
+        		</div><!--not_button-->
+        		<div class="button">
+					<a href="#" class="library"><img src="images/scene6/button1.png" alt="button">해양도서관</a>
+					<a href="#" class="museum"><img src="images/scene6/button2.png" alt="button">어린이박물관</a>
+					<a href="#" class="more"><img src="images/scene6/button3.png" alt="button">관람 사전 예약</a>
+        		</div>
+        	</div><!--center_wrap-->  
+        </div><!--scene6-->     
+        <div id="scene7">
+        	<div class="bottom_gnb_wrap"><!--100%-->
+				<ul class="bottom_gnb">
+					<li><a href="#">관람정보</a></li>
+					<li><a href="#">전시</a></li>
+					<li><a href="#">교육·행사</a></li>
+					<li><a href="#">소장품</a></li>
+					<li><a href="#">학술연구</a></li>
+					<li><a href="#">발간자료</a></li>
+					<li><a href="#">KNMM</a></li>
+				</ul><!--bottom_gnb-->
+        	</div><!--bottom_gnb_wrap-->
+        	<footer class="bottom"><!--100%-->
+        		<div class="center_wrap"><!--1300px-->
+					<div class="bottom_left">
+						<div class="address">
+							<span class="address1">49111 부산광역시 영도구 해양로 301번길 45 (동삼동 1156)</span>
+							<span class="address2">오시는길</span>
+						</div><!--address-->
+						<div class="copy">
+							COPYRIGHT&copy; KOREA NATIONAL MARITIME MUSEUM. ALL RIGHTS RESERVED.
+						</div><!--copy-->
+					</div><!--bottom_left-->
+					<div class="bottom_right">
+						<div class="select_wrap">
+							<select name="select1" id="select1">
+								<option value="">해양수산전시관</option>
+								<option value="">거제조선해양문화관</option>
+								<option value="">고남패총박물관</option>
+								<option value="">국립등대박물관</option>
+								<option value="">국립해양문화재연구소</option>
+								<option value="">국립해양생물자원관</option>
+								<option value="">군산근대역사박물관</option>
+								<option value="">단양 다누리 아쿠아리움</option>
+								<option value="">당진해양공원</option>
+								<option value="">독도박물관</option>
+								<option value="">동삼동패총전시관</option>
+								<option value="">땅끝해양자연사박물관</option>
+								<option value="">롯데아쿠아리움</option>
+								<option value="">목포어린이바다과학관</option>
+								<option value="">부경대학교 박물관</option>
+								<option value="">부산아쿠아리움</option>								
+								<option value="">부산해양자연사박물관</option>								
+								<option value="">세계조가비박물관</option>								
+								<option value="">소금박물관</option>								
+								<option value="">수산과학관</option>								
+								<option value="">울산해양박물관</option>								
+								<option value="">울진아쿠아리움</option>								
+								<option value="">장보고기념관</option>								
+								<option value="">장생포고래박물관</option>								
+								<option value="">전라남도해양수산과학관</option>								
+								<option value="">한국해양대학교 해양박물관</option>														
+							</select>
+							<select name="select2" id="select2">
+								<option value="">세계해양박물관</option>
+								<option value="">Internationales Martimes Museum Hamburg(독일)</option>
+								<option value="">Eesti Meremuseum Estonial Maritime Museum(에스토니아)</option>
+								<option value="">Royal Museums Greenwich(영국)</option>
+								<option value="">National Martime Museum in Gdansk(폴란드)</option>
+								<option value="">Het Scheep vaart museum(네덜란드)</option>
+								<option value="">Vasa Museet(스웨덴)</option>
+								<option value="">CENTRAL NAVAL MUSEUM(러시아)</option>
+								<option value="">Musee oceanographique de Monaco(모나코)</option>
+								<option value="">American Museum of Natural History(미국)</option>
+								<option value="">Royal Belgian Institute of Nattural Scieneces(벨기에)</option>
+								<option value="">Natural History Museum(영국)</option>
+								<option value="">Naturhistorisches Museum Wien(오스트리아)</option>
+								<option value="">Australian National Maritime Museum(호주)</option>
+								<option value="">Maritime Museum of Denmark(덴마크)</option>
+								<option value="">Maritime Museum of the Atlantic(캐나다)</option>
+								<option value="">Dubrovnik Museums(크로아티아)</option>
+								<option value="">National Maritime Museum of Ireland(아일랜드)</option>
+								<option value="">Maritime Museum of San Diego(미국)</option>
+								<option value="">Patriots Pointt naval & maritime museum(미국)</option>
+								<option value="">Kobe Maritime Museum(일본)</option>
+								<option value="">NYK Maritime Museum(일본)</option>
+								<option value="">Yokohama Port Museum(일본)</option>
+								<option value="">Norsk Maritime Museum(노르웨이)</option>
+								<option value="">Bergen Maritime Museum(노르웨이)</option>
+								<option value="">New Zealand Maritime Museum(뉴질랜드)</option>
+								<option value="">Vancouver Maritime Museum(캐나다)</option>
+								<option value="">THE MARITIME MUSEUM OF BRITISH COLUMBIA(캐나다)</option>
+								<option value="">Lake Champlain Martime Museum(미국)</option>
+								<option value="">Deutsches Schiffahrts Museum(독일)</option>
+								<option value="">Queensland Martime Museum(호주)</option>								
+							</select>
+							<select name="select3" id="select3">
+								<option value="">관련기관</option>
+								<option value="">해양수산부</option>
+								<option value="">한국해양수산개발원</option>
+								<option value="">한국해양과학기술원</option>
+								<option value="">극지연구소</option>
+								<option value="">국립수산과학원</option>
+								<option value="">해양환경공단</option>
+								<option value="">한국해양재단</option>
+								<option value="">한국해양소년단연맹</option>
+								<option value="">국립해양조사원</option>
+								<option value="">해양수산과학기술진흥원</option>
+								<option value="">선박안전기술공단</option>
+								<option value="">통일연구원</option>
+								<option value="">부산항만공사</option>
+								<option value="">한국수산산업총연합회</option>
+								<option value="">대한민국역사박물관</option>
+								<option value="">국립부산국악원</option>
+								<option value="">해양수산인재개발원</option>
+								<option value="">국립부산과학관</option>
+								<option value="">현충사관리소</option>
+								<option value="">국립해양문화재연구소</option>
+								<option value="">부산문화재단</option>
+								<option value="">롯데월드 아쿠아리움</option>
+								<option value="">벡스코</option>								
+							</select>
+						</div><!--select_wrap-->
+						<ul class="foot_menu">
+							<li><a href="#">이용약관</a></li>
+							<li><a href="#">개인정보처리방침</a></li>
+							<li><a href="#">영상정보처리기기운영·관리방침</a></li>
+							<li><a href="#">이메일무단수집거부</a></li>
+							<li><a href="#">저작권정책</a></li>
+						</ul><!--foot_menu-->
+					</div><!--bottom_right-->
+        		</div><!--center_wrap-->
+        	</footer><!--bottom-->
+        </div><!--scene7-->
     </div><!--container-->
 </div><!--wrap-->
 </body>

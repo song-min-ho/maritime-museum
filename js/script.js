@@ -1,5 +1,5 @@
 $(function () {
-
+	
     // swiper
     var swiper = new Swiper('.swiper1', {
         effect: 'fade',
@@ -36,9 +36,7 @@ $(function () {
             el: '.swiper-pagination',
             clickable: true,
         },
-    });
-    
-    
+    });        
     
     // 우측 네비게이션 클릭 이동
     $('.right_nav li a').click(function () {
@@ -52,35 +50,52 @@ $(function () {
         var sec1 = $('#scene1').offset().top 
         var sec2 = $('#scene2').offset().top - 1
         var sec3 = $('#scene3').offset().top - 1
-        /*var sec4 = $('#scene4').offset().top + 1
-        var sec4 = $('#scene5').offset().top + 1*/
+        var sec4 = $('#scene4').offset().top - 1
+        var sec5 = $('#scene5').offset().top - 1
+        var sec6 = $('#scene6').offset().top - 1
         if(top == sec1) {
             $('.top_list').css('color','')
             $('.left_wrap').css('color','')
             $('.right_nav').css('color','')
             $('.after').css('background-color','')
             $('.line').css('background-color','')
-			$('.logo img').attr('src','images/common/logo_white.png')
+			$('.logo').css({'margin-top':''})
 			$('.follow img').attr('src','images/common/plus_white.svg')
 			$('.left_wrap').css('border-color','')
 		    $('.follow').css('border-color','')
 			$('.top_list li .after').css('background-color','')
 			$('.scroll_down').css('color','')
 			$('.scroll_down img').attr('src','images/common/scroll_white.png')
-         } else if (top > sec2 /*&& top < sec2*/) {
+         } else if (top > sec2 && top < sec6) {
             $('.top_list').css('color','#222')
             $('.left_wrap').css('color','#222')
             $('.right_nav').css('color','#222')
             $('.after').css('background-color','#222')
             $('.line').css('background-color','#222')
-		    $('.logo img').attr('src','images/common/logo_black.png')
+		    $('.logo').css({'margin-top':'-35px'})
 		    $('.follow img').attr('src','images/common/plus_black.svg')
 		    $('.left_wrap').css('border-color','rgba(0,0,0,0.2)')
 		    $('.follow').css('border-color','rgba(0,0,0,0.2)')
 			$('.top_list li .after').css('background-color','#555')
 			$('.scroll_down').css('color','#222')
 			$('.scroll_down img').attr('src','images/common/scroll_black.png')
-        }		
+        } else if (top >= sec6 /*&& top < sec2*/) {
+            $('.top_list').css('color','')
+            $('.left_wrap').css('color','')
+            $('.right_nav').css('color','')
+            $('.after').css('background-color','')
+            $('.line').css('background-color','')
+			$('.logo').css({'margin-top':''})
+			$('.follow img').attr('src','images/common/plus_white.svg')
+			$('.left_wrap').css('border-color','')
+		    $('.follow').css('border-color','')
+			$('.top_list li .after').css('background-color','')
+			$('.scroll_down').css('color','')
+			$('.scroll_down img').attr('src','images/common/scroll_white.png')
+        }	
+		
+		
+		
     }); /*window scroll*/
     
     /*메뉴 아이콘 클릭 토탈메뉴*/
