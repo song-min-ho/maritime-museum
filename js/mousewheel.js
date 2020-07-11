@@ -26,7 +26,7 @@ $(function () {
             $("html,body").stop().animate({
                 scrollTop: moveTop + 'px'
             }, {
-                duration: 800,
+                duration: 500,
                 complete: function () {}
             });
         });
