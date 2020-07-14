@@ -25,10 +25,7 @@ $(function () {
             // 화면 이동 0.8초(800)
             $("html,body").stop().animate({
                 scrollTop: moveTop + 'px'
-            }, {
-                duration: 500,
-                complete: function () {}
-            });
+            }, 1000, 'easeOutCubic');
         });
     });
 });
