@@ -96,10 +96,7 @@ $(function () {
 			$('.scroll_down').css('color','')
 			$('.scroll_down img').attr('src','images/common/scroll_white.png')
 			$('.mobile_hamburger > div').css('background-color','')
-        }	
-		
-		
-		
+        }		
     }); /*window scroll*/
     
     // 햄버거버튼
@@ -115,20 +112,22 @@ $(function () {
 	$('.mobile_hamburger').toggle(function(){		
 		$('.mobile_hamburger .line1').addClass('click');
 		$('.mobile_hamburger .line2').addClass('click');
-		$('.mobile_menu').animate({'margin-left':'0'}, 1000, 'easeOutCubic');
+		$('.mobile_menu').stop().animate({'margin-left':'0'}, 1000, 'easeOutCubic');
 	}, function(){
 		$('.mobile_hamburger .line1').removeClass('click');
 		$('.mobile_hamburger .line2').removeClass('click');
-		$('.mobile_menu').animate({'margin-left':'-800px'}, 1000, 'easeOutCubic');
+		$('.mobile_menu').stop().animate({'margin-left':'-800px'}, 1000);
 	})
 	
 	// 모바일 메뉴 슬라이드 다운
 	$('.mobile_gnb li').toggle(function(){
+		$('.mobile_gnb >li> ul').stop().slideUp();
+		$('.mobile_gnb >li> img').removeClass('click');
 		$(this).children('ul').stop().slideDown();
-		$(this).children('img').addClass('click')
+		$(this).children('img').addClass('click');
 	}, function(){
 		$(this).children('ul').stop().slideUp();
-		$(this).children('img').removeClass('click')
+		$(this).children('img').removeClass('click');
 	})
 	
     // notice tab

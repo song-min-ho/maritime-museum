@@ -22,10 +22,10 @@ $(function () {
                     moveTop = $(this).prev().offset().top;
                 }
             }
-            // 화면 이동 0.8초(800)
+            // 화면 이동 0.6초(600)
             $("html,body").stop().animate({
                 scrollTop: moveTop + 'px'
-            }, 1000, 'easeOutCubic');
+            }, 600, 'easeOutCubic');
         });
     });
 });
