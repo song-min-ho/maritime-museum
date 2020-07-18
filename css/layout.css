@@ -23,7 +23,7 @@ body{font: normal 14px/1.4em "NotoSans",sans-serif; background-color: #fff; colo
 }
 
 /*left_wrap*/
-.left_wrap{width: 90px; height: 100%; position: fixed; left: 0;color: #fff; border-right: 1px solid rgba(255,255,255,0.2); z-index: 2;}
+.left_wrap{width: 90px; height: 100%; position: fixed; left: 0;color: #fff; border-right: 1px solid rgba(255,255,255,0.2); z-index: 4;}
 .menu_icon{width: 90px; height: 90px; background-color: rgba(255,255,255,0.1); cursor: pointer;}
 .left_wrap .line{width: 30px; height: 1px; position: absolute; background-color: #fff; transition:all 0.4s;}
 .line:nth-child(1){left: 25px; top: 35px;}
@@ -32,8 +32,20 @@ body{font: normal 14px/1.4em "NotoSans",sans-serif; background-color: #fff; colo
 .menu_icon:hover .line:nth-child(1){left: 30px;}
 .menu_icon:hover .line:nth-child(3){left: 30px;}
 .follow{width: 160px; height: 90px; position: fixed; bottom: 300px; left: -35px; transform: rotate(-90deg); text-align: center; line-height: 90px; border-right: 1px solid rgba(255,255,255,0.2); border-left: 1px solid rgba(255,255,255,0.2); cursor: pointer;}
-.follow img{width: 20px; margin-top: 36px; margin-left: 10px; opacity: 0.8;}
+.follow:hover img{transform: rotate(45deg);}
+.follow img{width: 20px; margin-top: 36px; margin-left: 10px; opacity: 0.8; transition: 0.6s;}
 .btn_go{width: 260px; height: 90px; position: fixed; bottom: 90px; left: -90px; transform: rotate(-90deg); text-align: center; line-height: 90px;}
+
+/*follow_popup*/
+.follow_popup_wrap{position: fixed; width: 100%; height: 160px; z-index: 3; overflow: hidden; bottom: 265px; left: 0; display: none;}
+.follow_popup{width: 100%; height: 160px; background-color: rgba(0,0,0,0.85); margin-top: 160px; padding-left: 90px; z-index: 3; color: #fff;}
+.follow_popup_txt{width: 100%; height: 160px;}
+.follow_popup .sns{float: left; height: 160px; line-height: 160px; padding-left: 130px;}
+.follow_popup .sns_tit{margin-right: 40px; font-size: 20px; font-weight: bold;}
+.follow_popup img{margin-top: 60px; margin-left: 10px;}
+.follow_popup .mail{float: left; height: 160px; line-height: 160px; margin-left: 160px;}
+.follow_popup .mail_tit{float: left; font-size: 20px; font-weight: bold;}
+.follow_popup input{float: left; margin-top: 60px; margin-left: 30px; height: 40px; width: 300px;}
 
 /*top*/
 .top{width: 100%; height: 90px; position: fixed; top: 0; left: 90px; z-index: 2; min-width: 1024px;}
@@ -61,7 +73,7 @@ body{font: normal 14px/1.4em "NotoSans",sans-serif; background-color: #fff; colo
 .right_nav .after{display: inline-block; width: 4px; height: 4px; margin-left: 5px; background-color: #fff; position: relative; top: -2px;}
 
 /*total_menu*/ /*display:flex*/
-.total_menu{width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); color: #fff; position: fixed; z-index:3 ; display: flex; align-items: center;}
+.total_menu{width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); color: #fff; position: fixed; z-index:5 ; display: flex; align-items: center;}
 .total_menu > ul{width: 1200px; min-width: 1200px; height: 800px; margin: 0 auto;}
 .menu_logo{width: 220px; height: 40px; margin-bottom: 50px;}
 .total_menu > ul > li{float: left; width: 170px; height: 19px; line-height: 19px; text-align: center;}/*관람정보*/
