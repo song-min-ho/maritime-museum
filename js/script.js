@@ -1,50 +1,52 @@
 $(function () {
+    
+	// language
+	$('.top_right .top_sublist >li:nth-child(4)').toggle(function(){
+		$(this).children('ul').stop().slideDown()	
+		$(this).css('opacity','1')
+	}, function(){
+		$(this).children('ul').stop().slideUp()
+		$(this).css('opacity','0.6')
+	})
 	
-    // swiper
-    var swiper = new Swiper('.swiper1', {
-        effect: 'fade',
-        autoplay: {
-            delay: 3500,
-            disableOnInteraction: false,
-        },
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-		speed : 1000,
-    });
-    
-    var swiper = new Swiper('.swiper2', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-    
-    var swiper = new Swiper('.swiper3', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
+	// plus 애니메이션
+	$('#scene1 .info .plus').hover(function(){
+		$(this).animate({'margin-left':'10px'}, function(){
+			$(this).animate({'margin-left':''})
+		})
+	}, function(){		
+	})
+	$('#scene5 .more').hover(function(){
+		$(this).animate({'margin-right':'-5px'}, function(){
+			$(this).animate({'margin-right':'5px'})
+		})
+	}, function(){		
+	})
 	
-	var swiper = new Swiper('.swiper4', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });        
-    
     // right_nav 클릭 이동
     $('.right_nav li a').click(function () {
         var scroll = $($(this).attr('href')).offset().top;
         $('html, body').animate({scrollTop: scroll}, 800);       
     });
-
+	
+	/*follow_popup*/	
+	$('.follow_popup_txt').animate({'left':'40px'})
+	$('.follow_popup_txt').css('opacity','0')
+	$('.follow').click(function(){
+		$('.follow_popup_wrap').show()/*z-index*/
+		$('.follow_popup').animate({'margin-top':'0'}, 500, function(){			
+			$('.follow_popup_txt').animate({'left':'90px','opacity':'1'})			
+		})
+	})
+	$('.follow_popup_tit').click(function(){			
+		$('.follow_popup_txt').animate({'left':'40px','opacity':'0'}, 500, function(){
+			$('.follow_popup').animate({'margin-top':'160px'}, 500, function(){				
+				$('.follow_popup_wrap').hide()/*z-index*/
+			})
+		})
+	})
+		
+	
     // 스크롤 #scene2 부터 글자색 변경
     $(window).scroll(function () {
         var top = $(this).scrollTop()
@@ -55,7 +57,10 @@ $(function () {
         var sec5 = $('#scene5').offset().top - 1
         var sec6 = $('#scene6').offset().top - 1
         if(top == sec1) {
-            $('.top_list').css('color','')
+            $('.top_right').css('color','')
+            $('.top_right .top_sublist >li:nth-child(3)').css('border','')
+            $('.top_right .top_sublist >li:nth-child(4)').css('border','')
+            $('.top_right .top_sublist >li:nth-child(4) > ul').css('border','')
             $('.left_wrap').css('color','')
             $('.right_nav').css('color','')
             $('.after').css('background-color','')
@@ -69,7 +74,10 @@ $(function () {
 			$('.scroll_down img').attr('src','images/common/scroll_white.png')
 			$('.mobile_hamburger > div').css('background-color','')
          } else if (top > sec1 && top < sec6) {
-            $('.top_list').css('color','#222')
+            $('.top_right').css('color','#222')
+			$('.top_right .top_sublist >li:nth-child(3)').css('border','1px solid #666')
+            $('.top_right .top_sublist >li:nth-child(4)').css('border','1px solid #666')
+			 $('.top_right .top_sublist >li:nth-child(4) > ul').css('border','1px solid #666')
             $('.left_wrap').css('color','#222')
             $('.right_nav').css('color','#222')            
             $('.after').css('background-color','#222')
@@ -195,39 +203,6 @@ $(function () {
         } 
 		return false;
     });
-	
-	/*follow_popup*/	
-	$('.follow_popup_txt').animate({'margin-left':'-50px'})
-	$('.follow_popup_txt').css('opacity','0')
-	$('.follow').toggle(function(){
-		$('.follow_popup_wrap').show()		
-		$('.follow_popup').animate({'margin-top':'0'}, 500, function(){			
-			$('.follow_popup_txt').animate({'margin-left':'0','opacity':'1'})			
-		})
-		$('.follow').css('color','#fff')
-		$('.follow img').attr('src','images/common/plus_white.svg')
-	},function(){			
-		$('.follow_popup_txt').animate({'margin-left':'-50px','opacity':'0'}, 500, function(){
-			$('.follow_popup').animate({'margin-top':'160px'}, 500, function(){				
-				$('.follow_popup_wrap').hide()
-			})
-		})		
-		$('.follow').css('color','')				
-		var top = $('.follow').offset().top
-		var sec1 = $('#scene1').offset().top
-		var sec2 = $('#scene2').offset().top - 1		
-		var sec6 = $('#scene6').offset().top - 1
-		if(top > 0 && top <sec2) {            
-			$('.follow img').attr('src','images/common/plus_white.svg')		
-		 } else if (top > sec2 && top < sec6) {            
-			$('.follow img').attr('src','images/common/plus_black.svg')		    
-		} else if (top >= sec6 /*&& top < sec2*/) {            
-			$('.follow img').attr('src','images/common/plus_white.svg')			
-		}
-		
-	})
-	
-	
 	
 	
     
