@@ -77,10 +77,11 @@ body{font: normal 14px/1.4em "NotoSans",sans-serif; background-color: #fff; colo
 
 @media screen and (max-width:768px){
 	.top{min-width: 320px; left: 0;}
-	.top_list{display: none;}
+	.top_right{display: none;}
 	.logo_wrap{position: absolute; left: 50%; transform: translateX(-50%); margin-left: 0; margin-left: -10px;}
 	.scroll_down{display: none;}
-	.left_wrap{display: none;}		
+	.left_wrap{display: none;}
+	
 }
 	
 /*right_nav*/
